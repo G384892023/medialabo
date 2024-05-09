@@ -1,3 +1,8 @@
+body{
+    background-color: #000b1c;
+}
+
+
 p {
 	color: navy;
 }
@@ -19,6 +24,10 @@ h2 {
 	color: #3f3faf;
 	background: linear-gradient(to right, white, #ffefaf);
 	font-family: cursive;
+}
+
+h3{
+    color: white;
 }
 
 div#zentai {
