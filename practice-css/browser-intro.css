@@ -22,6 +22,7 @@ div#zentai {
 	display: flex;
 	flex-direction: row;
 	width: 1024px;
+	grid-template-columns: 1fr 1fr;
 }
 
 div#zentai > div {
