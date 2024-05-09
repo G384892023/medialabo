@@ -9,8 +9,8 @@ p.info {
 h1 {
 	color: white;
 	text-shadow: 
-	0 0 1em navy,
-	0 0 0.2em navy;
+		0 0 1em navy,
+		0 0 0.2em navy;
 }
 
 h2 {
