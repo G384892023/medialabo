@@ -4,7 +4,7 @@ body{
 
 
 p {
-	color: navy;
+	color: white;
 }
 
 p.info {
@@ -13,7 +13,7 @@ p.info {
 }
 
 h1 {
-	color: white;
+	color: #EAF3FF;
 	text-shadow: 
 		0 0 1em navy,
 		0 0 0.2em navy;
@@ -21,8 +21,8 @@ h1 {
 
 h2 {
 	margin: 5px;
-	color: #3f3faf;
-	background: linear-gradient(to right, white, #ffefaf);
+	color: white;
+	background: linear-gradient(to right, #5383c3, #95CCFF);
 	font-family: cursive;
 }
 
