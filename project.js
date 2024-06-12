@@ -225,9 +225,9 @@ let data = {
   function kensaku(){
         let urll;
         if (number<10) {
-          urll = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00'+ h1 + '.json';
+          urll = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00'+ number + '.json';
         }else {
-          urll = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0'+ h1 + '.json';
+          urll = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0'+ number + '.json';
         }
         axios.get(urll).then(showResult).catch(showError).then(finish);
     }
