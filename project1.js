@@ -208,7 +208,7 @@ let data = {
   let b3 = document.createElement('p');
   let b4 = document.createElement('p');
   let b5 = document.createElement ('a');
-  let c = document.querySelector('button#sagasu');
+  let c = document.querySelector('button#zyanru');
   let d1;
   let d2;
   let number;
