@@ -202,13 +202,13 @@ let data = {
   /////////// 課題3-2 ここからプログラムを書こう
   
   
-  let a = document.querySelector('p#gurume');
+  let a = document.querySelector('p#innsyoku');
   let b1 = document.createElement('p');
   let b2 = document.createElement('p');
   let b3 = document.createElement('p');
   let b4 = document.createElement('p');
   let b5 = document.createElement ('a');
-  let c = document.querySelector('button#shimei');
+  let c = document.querySelector('button#sagasu');
   let d1;
   let d2;
   let number;
