@@ -6,6 +6,8 @@ console.log('答え（デバッグ用）: ' + kotae);
 let kaisu = 0;
 let seikaisu = 0;
 
+let v = document.querySelector('label[for="yosou"]');
+v.textContent = '1~10を選んで勝利を手に入れよう'; 
 
 let w = document.querySelector('p');
 w.textContent = ''; 
