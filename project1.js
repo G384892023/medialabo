@@ -256,7 +256,7 @@ let data = {
         for (let d1 of web3) {
           console.log(d1);
           let d2 = d1.coupon_urls;
-          t.textContent = ("店舗名: " + d1.name);
+          c.textContent = ("店舗名: " + d1.name);
           b1.textContent = ("住所: " + d1.address);
           b2.textContent = ("アクセス情報: " + d1.access);
           b3.textContent = ("営業日: " + d1.open );
