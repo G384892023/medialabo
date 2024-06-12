@@ -239,7 +239,7 @@ let data = {
          let web2 = web1.results;
          let web3 = web2.shop;
       if (web3.length===0) {
-          c.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
+          c.textContent = ('検索しましたがそれに合致する内容の料理店はありませんでした。');
           b1.textContent = null;
           b2.textContent = null;
           b3.textContent = null;
