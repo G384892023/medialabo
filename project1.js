@@ -245,12 +245,12 @@ let data = {
           b3.textContent = null;
           b4.textContent = null;
           b5.textContent = null;
-          a.insertAdjacentElement('beforeend',t);
-          a.insertAdjacentElement('beforeend',w);
-          a.insertAdjacentElement('beforeend',e);
-          a.insertAdjacentElement('beforeend',i);
-          a.insertAdjacentElement('beforeend',u);
-          a.insertAdjacentElement('beforeend',q);
+          a.insertAdjacentElement('beforeend',c);
+          a.insertAdjacentElement('beforeend',b1);
+          a.insertAdjacentElement('beforeend',b2);
+          a.insertAdjacentElement('beforeend',b3);
+          a.insertAdjacentElement('beforeend',b4);
+          a.insertAdjacentElement('beforeend',b5);
           
          } else {
         for (let d1 of web3) {
@@ -264,12 +264,12 @@ let data = {
           b5.textContent ='詳細はこちら';
           q.setAttribute('href',d2.pc);
           q.setAttribute('target' , '_blank');
-          a.insertAdjacentElement('beforeend',t);
-          a.insertAdjacentElement('beforeend',w);
-          a.insertAdjacentElement('beforeend',e);
-          a.insertAdjacentElement('beforeend',i);
-          a.insertAdjacentElement('beforeend',u);
-          a.insertAdjacentElement('beforeend',q);
+          a.insertAdjacentElement('beforeend',c);
+          a.insertAdjacentElement('beforeend',b1);
+          a.insertAdjacentElement('beforeend',b2);
+          a.insertAdjacentElement('beforeend',b3);
+          a.insertAdjacentElement('beforeend',b4);
+          a.insertAdjacentElement('beforeend',b5);
           }
         }
     }
