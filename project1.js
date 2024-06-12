@@ -262,8 +262,8 @@ let data = {
           b3.textContent = ("営業日: " + d1.open );
           b4.textContent = ("座席数: " + d1.capacity + "席");
           b5.textContent ='詳細はこちら';
-          q.setAttribute('href',d2.pc);
-          q.setAttribute('target' , '_blank');
+          b5.setAttribute('href',d2.pc);
+          b5.setAttribute('target' , '_blank');
           a.insertAdjacentElement('beforeend',c);
           a.insertAdjacentElement('beforeend',b1);
           a.insertAdjacentElement('beforeend',b2);
