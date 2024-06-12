@@ -204,12 +204,11 @@ let data = {
 
 
 const clearBtn = document.getElementById('clearBtn');
-clearBtn.addEventListener('click',
-  function(){
-    var clist =document.getElementsByClassName("check_box");
-    for (var i = 0; i < clist.length; ++i) {
-      clist[i].checked = false; 
-    }
-  }
-);
+clearBtn.addEventListener('click',clear);
 
+function clear(){
+  var clist =document.getElementsByClassName("check_box");
+  for (var i = 0; i < clist.length; ++i) {
+    clist[i].checked = false; 
+  }
+}
