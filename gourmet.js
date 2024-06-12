@@ -202,110 +202,80 @@ let data = {
 /////////// 課題3-2 ここからプログラムを書こう
 
 
+let a = document.querySelector('p#gurume');
+let b1 = document.createElement('p');
+let b2 = document.createElement('p');
+let b3 = document.createElement('p');
+let b4 = document.createElement('p');
+let b5 = document.createElement ('a');
+let c = document.querySelector('button#shimei');
+let d1;
+let d2;
+let number;
+c.addEventListener('click', showSelectResult);
+c.addEventListener('click', kensaku);
+    
+function showSelectResult(){
+    let s = document.querySelector('select#santaro');
+    let idx = s.selectedIndex; 
+    number = idx;
+}
 
-const clearBtn = document.getElementById('clearBtn');
-clearBtn.addEventListener('click',clear);
 
-function clear(){
-  var clist =document.getElementsByClassName("check_box");
-  console.log(clist.length);
-  for (var i = 0; i < clist.length; ++i) {
-    clist[i].checked = false; 
-    console.log(clist);
+function kensaku(){
+      let urll;
+      if (number<10) {
+        urll = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00'+ h1 + '.json';
+      }else {
+        urll = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0'+ h1 + '.json';
+      }
+      axios.get(urll).then(showResult).catch(showError).then(finish);
   }
-}
-
-const chooseBtn = document.getElementById('chooseBtn');
-chooseBtn.addEventListener('click',showSelectResult);
-
-for (let i = 0; i < 2; i++) {
-  console.log("名前" + data.results.shop[i].name);
-  console.log("アクセス" + data.results.shop[i].access);
-  console.log("住所" + data.results.shop[i].address);
-  console.log("予算" + data.results.shop[i].budget.name);
-  console.log("キャッチコピー" + data.results.shop[i].catch);
-  console.log("ジャンル" + data.results.shop[i].genre.name);
-  console.log("営業時間" + data.results.shop[i].open);
-  console.log("最寄駅" + data.results.shop[i].station_name);
-  console.log("サブジャンル" + data.results.shop[i].sub_genre.name);
-  console.log();
-}
-let ps1 = document.querySelectorAll('dl');
-console.log(ps1);
-let div = document.querySelector('div#result');
-/*for (let data5 of data.results.shop) {
-  let li = document.createElement('li');
-  li.textContent = data.results.shop[0].name + data.results.shop[0].access + data.results.shop;
-  ul5.insertAdjacentElement('beforeend', li);
-  //console.log(data5);
-}*/
-let a = document.querySelector('#answer');
-a.addEventListener('click', print);
-function print() {
-  let b = document.querySelector('select#Genre');
-  let value_id = (b.selectedOptions['0'].value);
-  console.log(value_id);
-  let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + value_id + '.json';
-  console.log(url);
-  axios.get(url)
-      .then(showResult)   // 通信成功
-      .catch(showError)   // 通信失敗
-      .then(finish);      // 通信の最後の処理
-}
 function showResult(resp) {
-  let w = document.querySelectorAll('li');
-  for (let i of w) {
-      i.remove();
+      let web1 = resp.data;
+      if (typeof web1 === 'string') {
+           web1 = JSON.parse(web1);
+       }
+       let web2 = web1.results;
+       let web3 = web2.shop;
+	if (web3.length===0) {
+        t.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
+        b1.textContent = null;
+        b2.textContent = null;
+        b3.textContent = null;
+        b4.textContent = null;
+        b5.textContent = null;
+        a.insertAdjacentElement('beforeend',t);
+        a.insertAdjacentElement('beforeend',w);
+        a.insertAdjacentElement('beforeend',e);
+        a.insertAdjacentElement('beforeend',i);
+        a.insertAdjacentElement('beforeend',u);
+        a.insertAdjacentElement('beforeend',q);
+        
+       } else {
+      for (let d1 of web3) {
+        console.log(d1);
+        let d2 = d1.coupon_urls;
+        t.textContent = ("店舗名: " + d1.name);
+        b1.textContent = ("住所: " + d1.address);
+        b2.textContent = ("アクセス情報: " + d1.access);
+        b3.textContent = ("営業日: " + d1.open );
+        b4.textContent = ("座席数: " + d1.capacity + "席");
+        b5.textContent ='詳細はこちら';
+        q.setAttribute('href',d2.pc);
+        q.setAttribute('target' , '_blank');
+        a.insertAdjacentElement('beforeend',t);
+        a.insertAdjacentElement('beforeend',w);
+        a.insertAdjacentElement('beforeend',e);
+        a.insertAdjacentElement('beforeend',i);
+        a.insertAdjacentElement('beforeend',u);
+        a.insertAdjacentElement('beforeend',q);
+        }
+      }
   }
-  w = document.querySelectorAll('p');
-  for (let i of w) {
-      i.remove();
+  function showError(err) {
+    console.log(err);
   }
-  w = document.querySelectorAll('div#result>div');
-  for (let i of w) {
-      i.remove();
+  function finish() {
+    console.log('Ajax 通信が終わりました。');
   }
-  let data = resp.data;
-  if (typeof data === 'string') {
-      data = JSON.parse(data);
-  }
-  let kaisu = parseInt(data.results.results_returned, 10);
-  console.log(kaisu);
-  console.log(resp.data);
-  for (let i = 0; i < kaisu; i++) {
-      let ul = document.createElement('div');
-      let div = document.querySelector('div#result');
-      let li = document.createElement('p');
-      li.textContent = ('店舗名: ' + data.results.shop[i].name);
-      ul.insertAdjacentElement('beforeend', li);
-      let p = document.createElement('p');
-      p.textContent = ('住所: ' + data.results.shop[i].address);
-      ul.insertAdjacentElement('beforeend', p);
-      let p1 = document.createElement('p');
-      p1.textContent = ('アクセス: ' + data.results.shop[i].access);
-      ul.insertAdjacentElement('beforeend', p1);
-      let p2 = document.createElement('p');
-      p2.textContent = ('予算: ' + data.results.shop[i].budget.name);
-      ul.insertAdjacentElement('beforeend', p2);
-      let p3 = document.createElement('p');
-      p3.textContent = ('キャッチ: ' + data.results.shop[i].catch);
-      ul.insertAdjacentElement('beforeend', p3);
-      let p4 = document.createElement('p');
-      p4.textContent = ('サブジャンル: ' + data.results.shop[i].genre.name);
-      ul.insertAdjacentElement('beforeend', p4);
-      let p5 = document.createElement('p');
-      p5.textContent = ('営業時間: ' + data.results.shop[i].open);
-      ul.insertAdjacentElement('beforeend', p5);
-      let p6 = document.createElement('p');
-      p6.textContent = ('最寄駅: ' + data.results.shop[i].station_name);
-      ul.insertAdjacentElement('beforeend', p6);
-      div.insertAdjacentElement('beforeend', ul);
-  }
-}
-
-function showError() {
-  console.log(err);
-}
-function finish() {
-  console.log('Ajax 通信が終わりました');
-}
