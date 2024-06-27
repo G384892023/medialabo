@@ -49,4 +49,10 @@ for(let n of y){
 }
 
 // 練習4-5 箇条書き追加プログラム
+let ul5=document.querySelector('ul#location');
+for(let data5 of data){
+ let li =document.createElement('li');
+    li.textContent=data5.name+'...緯度:'+data5.lat+', 経度:'+data5.lng;
+    ul5.insertAdjacentElement('beforeend',li);
+}
 
