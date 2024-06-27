@@ -42,10 +42,10 @@ B433.insertAdjacentElement('beforeend', B4331);
 B4.insertAdjacentElement('beforeend', B433); 
 
 // 練習4-4 箇条書き削除プログラム
-let x = document.querySelector('li'); 
-let y = document.querySelectorAll('li'); 
-for(let n of y){
-	x.remove();
+let w = document.querySelector('ul#location');
+let w1 = document.querySelectorAll('li');
+for (let li of w1) {
+    li.remove();
 }
 
 // 練習4-5 箇条書き追加プログラム
